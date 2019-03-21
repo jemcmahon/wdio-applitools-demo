@@ -1,7 +1,7 @@
 const {Eyes, Target} = require('@applitools/eyes.webdriverio');
 
 const eyes = new Eyes();
-eyes.setApiKey(process.env.APPLITOOLS_KEY);
+eyes.setApiKey(process.env.APPLITOOLS_API_KEY);
 
 describe('my first visual test', function () {
   it('should look visually perfect', async function () {
@@ -14,7 +14,7 @@ describe('my first visual test', function () {
     try {
       const viewportSize = browser.getViewportSize();
 
-      await eyes.open(browser, 'Hello World!', 'My first Javascript test!', viewportSize);
+      await eyes.open(browser, 'HelloEyesWdio App', 'HelloEyesWdio', viewportSize);
 
       await eyes.check('Main Page', Target.window());
 
